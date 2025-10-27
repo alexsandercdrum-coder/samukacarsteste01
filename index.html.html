@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAMUKACARS</title>
+
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-color: #0d0a01;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== Container principal ===== */
+    .site-container {
+      width: 1440px;
+      margin: 0 auto;
+      background-color: #0d0a01;
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      background-color: #0d0a01;
+      width: 100%;
+      height: 117px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .logo img {
+      height: 117px;
+      width: auto;
+      display: block;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      color: #007BFF;
+    }
+
+    /* ===== Instagram Feed ===== */
+    .instagram-feed {
+      width: 100%;
+      margin: 0 auto 20px auto;
+    }
+
+    /* ===== Seção de Destaques ===== */
+    .features {
+      width: 100%;
+      height: 238px; 
+      margin: 0 auto 10px auto;
+      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #581414;
+    }
+
+    .features .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 95%;
+      gap: 20px;
+      flex-wrap: nowrap; 
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      border: 1px solid #0d0a01;
+      border-radius: 15px;
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #0d0a01;
+      color: #fff;
+    }
+
+    .feature.missao {
+      background-color: #581414; 
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .feature p {
+      font-size: 16px;
+      color: #fff;
+    }
+
+    /* ===== Cards extras ===== */
+    .extra-cards {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin: 10px auto 10px auto;
+      gap: 0px;
+      flex-wrap: wrap;
+      background-color: #261c1a;
+      padding: 20px 10px;
+      border-radius: 15px;
+    }
+
+    .extra-card-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .extra-card {
+      width: 355.43px;
+      height: 141.04px;
+      background-color: #0d0a01;
+      color: #fff;
+      border: 1px solid #0d0a01;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* === Imagens substituindo os cards de texto === */
+    .card-imagem {
+      width: 355.43px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0;
+      display: block;
+    }
+
+    /* ===== Footer ===== */
+    .site-footer {
+      background-color: #581414; 
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 10px;
+      flex-wrap: wrap;
+      text-align: center;
+      width: 100%;
+    }
+
+    .footer-block {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-block h4 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    .footer-block p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ===== Linha inferior do rodapé ===== */
+    .footer-bottom {
+      background-color: #0d0a01;
+      color: #ddd;
+      text-align: center;
+      font-size: 13px;
+      padding: 10px 0;
+      width: 100%;
+      border-top: 1px solid #0d0a01;
+    }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 1440px) {
+      .site-container {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .features .container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .feature {
+        height: 200px;
+      }
+      .extra-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .extra-card-container {
+        margin-bottom: 20px;
+      }
+      .site-footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+      }
+      .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .nav a {
+        margin: 10px;
+      }
+    }
+
+    /* === Logo flutuante no canto inferior direito === */
+    .footer-floating-logo {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      width: 100px;
+      height: auto;
+      z-index: 2000;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-floating-logo:hover {
+      transform: scale(1.1);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="site-container">
+
+    <header class="site-header">
+      <a href="#" class="logo">
+        <img src="imagens/samlogo.jpg" alt="Logo do site">
+      </a>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Quem Somos</a>
+        <a href="#">Veículos</a>
+        <a href="#">Contato</a>
+      </nav>
+    </header>
+
+    <!-- Instagram feed -->
+    <section class="instagram-feed">
+      <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+      <iframe src="//lightwidget.com/widgets/db0145d0c0435574ac27133769d74214.html"
+              scrolling="no" allowtransparency="true"
+              class="lightwidget-widget"
+              style="width:100%;border:0;overflow:hidden;">
+      </iframe>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="feature historia">
+          <h3>Nossa História</h3>
+          <p>Somos uma empresa especializada em venda, troca e compra de veículos automotivos desde 2018.</p>
+        </div>
+        <div class="feature missao">
+          <h3>Missão</h3>
+          <p>Atendimento de excelência, tornando possível a realização do sonho do carro próprio e proporcionando experiências marcantes de acordo com a necessidade do cliente.</p>
+        </div>
+        <div class="feature visao">
+          <h3>Visão</h3>
+          <p>Ser reconhecida como uma grande rede de lojas de veículos, expandindo com excelência, solidez e confiança, levando a realização do sonho do carro próprio cada vez mais longe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Cards Extras === -->
+    <section class="extra-cards">
+      <div class="extra-card-container">
+        <div class="extra-card">
+          <img src="imagens/atendimento.jpeg" alt="Horário de Atendimento" class="card-imagem">
+        </div>
+      </div>
+
+      <div class="extra-card-container">
+        <div class="extra-card">
+          <img src="imagens/regiao.jpeg" alt="Região de Atendimento" class="card-imagem">
+        </div>
+      </div>
+
+      <div class="extra-card-container">
+        <div class="extra-card">
+          <img src="imagens/canais.jpg" alt="Canais de Atendimento" class="card-imagem">
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer principal -->
+    <footer class="site-footer">
+      <div class="footer-block">
+        <h4>ATENDIMENTO</h4>
+        <p>samukacars@gmail.com</p>
+        <p>(11) 9 7178-0224</p>
+        <p>De segunda a sexta-feira<br>Das 8h00 às 18h00</p>
+      </div>
+      <div class="footer-block">
+        <h4>INSTITUCIONAL</h4>
+        <p>Home</p>
+        <p>Serviços</p>
+        <p>Nossa história</p>
+        <p>Nossa essência</p>
+        <p>Orçamento</p>
+        <p>Redes sociais</p>
+        <p>Contato</p>
+      </div>
+      <div class="footer-block">
+        <h4>REDES SOCIAIS</h4>
+        <p>WhatsApp</p>
+        <p>Instagram</p>
+        <p>Twitter</p>
+        <p>LinkedIn</p>
+      </div>
+    </footer>
+
+    <!-- Linha inferior do rodapé -->
+    <div class="footer-bottom">
+      SAMUKA CARS MULTIMARCAS LTDA  |  Av. Martim Francisco, 1196 - Jardim Utinga, Santo André - SP, 09230-700  |  CNPJ: 23.381.633/0001-92
+    </div>
+
+  </div>
+
+  <!-- Logo flutuante no canto inferior direito -->
+  <img src="imagens/samuka2.jpg" alt="Logo Samuka Cars" class="footer-floating-logo">
+
+</body>
+</html>
